@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>For Mobina ❤️</title>
+
+<meta name="theme-color" content="#050505">
+
+<style>
+
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v33.003/Vazir.css');
+
+:root{
+--black:#050505;
+--gold:#FFD700;
+--red:#8B0000;
+--pink:#ff4d6d;
+--warm:#F5E6D3;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Vazir;
+background:black;
+overflow:hidden;
+height:100vh;
+color:white;
+cursor:pointer;
+}
+
+/* ================= PRELOADER ================= */
+
+#preloader{
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:99999;
+transition:1.5s;
+}
+
+.loaderHeart{
+font-size:75px;
+animation:heartbeat 1.2s infinite;
+}
+
+.loadingText{
+margin-top:25px;
+color:var(--gold);
+font-size:18px;
+}
+
+/* ================= BACKGROUND ================= */
+
+.background{
+position:fixed;
+inset:0;
+
+background:
+radial-gradient(circle at center,
+rgba(139,0,0,.18),
+black 70%);
+
+z-index:-10;
+
+animation:redAmbient 5s infinite ease-in-out;
+}
+
+@keyframes redAmbient{
+
+0%{
+background:
+radial-gradient(circle at center,
+rgba(139,0,0,.15),
+black 70%);
+}
+
+50%{
+background:
+radial-gradient(circle at center,
+rgba(255,0,80,.28),
+black 70%);
+}
+
+100%{
+background:
+radial-gradient(circle at center,
+rgba(139,0,0,.15),
+black 70%);
+}
+
+}
+
+/* ================= PARTICLES ================= */
+
+.particle{
+position:absolute;
+width:4px;
+height:4px;
+border-radius:50%;
+background:var(--gold);
+opacity:.6;
+animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+
+from{
+transform:translateY(100vh);
+opacity:0;
+}
+
+20%{
+opacity:.8;
+}
+
+to{
+transform:translateY(-10vh);
+opacity:0;
+}
+
+}
+
+/* ================= SCENES ================= */
+
+.scene{
+position:absolute;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+padding:40px;
+
+text-align:center;
+
+opacity:0;
+pointer-events:none;
+
+transition:1.5s ease;
+transform:scale(.96);
+
+}
+
+.scene.active{
+opacity:1;
+pointer-events:auto;
+transform:scale(1);
+}
+
+/* ================= TEXT ================= */
+
+.bigText{
+font-size:clamp(28px,4vw,56px);
+line-height:2;
+max-width:1000px;
+color:white;
+}
+
+.subText{
+margin-top:25px;
+font-size:15px;
+color:#999;
+line-height:2;
+}
+
+/* ================= TYPEWRITER ================= */
+
+.typeWriter{
+border-left:2px solid var(--gold);
+padding-left:10px;
+white-space:nowrap;
+overflow:hidden;
+animation:blinkCursor .8s infinite;
+}
+
+@keyframes blinkCursor{
+50%{
+border-color:transparent;
+}
+}
+
+/* ================= HEART ================= */
+
+.heroHeart{
+font-size:140px;
+filter:drop-shadow(0 0 25px crimson);
+animation:heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.12);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* ================= ENVELOPE ================= */
+
+.envelope{
+width:340px;
+height:220px;
+
+background:linear-gradient(135deg,#111,#222);
+
+border:2px solid var(--gold);
+
+position:relative;
+
+box-shadow:0 0 25px rgba(255,215,0,.2);
+
+transition:.5s;
+}
+
+.envelope:hover{
+transform:scale(1.04);
+}
+
+.envelope::before{
+content:"";
+
+position:absolute;
+
+top:-110px;
+left:0;
+
+border-left:170px solid transparent;
+border-right:170px solid transparent;
+border-bottom:110px solid #191919;
+}
+
+.envelopeSeal{
+font-size:55px;
+margin-top:75px;
+}
+
+/* ================= STORY ================= */
+
+.storyBackground{
+position:fixed;
+inset:0;
+
+background-image:url("image(28).png");
+background-size:cover;
+background-position:center;
+
+filter:blur(5px) brightness(.3);
+
+transform:scale(1.1);
+
+animation:slowZoom 20s infinite alternate ease-in-out;
+
+display:none;
+
+z-index:-6;
+}
+
+@keyframes slowZoom{
+
+from{
+transform:scale(1.08);
+}
+
+to{
+transform:scale(1.18);
+}
+
+}
+
+.storyOverlay{
+position:fixed;
+inset:0;
+
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.4),
+rgba(139,0,0,.25),
+rgba(0,0,0,.75)
+);
+
+display:none;
+
+z-index:-5;
+}
+
+.storyCard{
+
+width:min(900px,90vw);
+
+padding:45px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,215,0,.2);
+
+box-shadow:
+0 0 40px rgba(255,215,0,.08),
+0 0 60px rgba(255,0,80,.06);
+
+}
+
+.storyText{
+font-size:clamp(20px,2.1vw,34px);
+line-height:2.4;
+color:var(--warm);
+min-height:260px;
+white-space:pre-line;
+
+transition:1s;
+}
+
+/* ================= FINAL ================= */
+
+.finalScreen{
+position:fixed;
+inset:0;
+
+display:none;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+background:black;
+
+z-index:50000;
+
+padding:30px;
+text-align:center;
+
+animation:finalFade 3s ease;
+}
+
+@keyframes finalFade{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+.finalTitle{
+font-size:clamp(30px,4vw,60px);
+line-height:2;
+color:var(--gold);
+
+text-shadow:0 0 25px crimson;
+}
+
+.finalSignature{
+margin-top:40px;
+font-size:24px;
+line-height:2.3;
+color:var(--warm);
+}
+
+.secretBtn{
+
+margin-top:45px;
+
+padding:18px 40px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid var(--gold);
+
+color:white;
+
+font-family:Vazir;
+font-size:18px;
+
+cursor:pointer;
+
+transition:.4s;
+}
+
+.secretBtn:hover{
+transform:scale(1.05);
+background:rgba(255,0,80,.1);
+}
+
+/* ================= MUSIC BUTTON ================= */
+
+#audioBtn{
+
+position:fixed;
+
+bottom:20px;
+right:20px;
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid var(--gold);
+
+backdrop-filter:blur(10px);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+font-size:24px;
+
+z-index:9999;
+}
+
+.spin{
+animation:spin 6s linear infinite;
+}
+
+@keyframes spin{
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+/* ================= ROSES ================= */
+
+.rose{
+position:fixed;
+top:-10%;
+font-size:24px;
+pointer-events:none;
+z-index:999;
+
+animation:roseFall linear forwards;
+}
+
+@keyframes roseFall{
+
+to{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* ================= FLOAT HEART ================= */
+
+.floatHeart{
+position:fixed;
+bottom:-10%;
+font-size:26px;
+pointer-events:none;
+opacity:.8;
+z-index:998;
+
+animation:heartFloat linear forwards;
+}
+
+@keyframes heartFloat{
+
+to{
+transform:translateY(-110vh) translateX(40px);
+opacity:0;
+}
+
+}
+
+/* ================= SPARKLE ================= */
+
+.sparkle{
+position:fixed;
+font-size:12px;
+pointer-events:none;
+z-index:999;
+animation:sparkFade .8s linear forwards;
+}
+
+@keyframes sparkFade{
+
+to{
+transform:translateY(-15px);
+opacity:0;
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+.bigText{
+font-size:25px;
+}
+
+.heroHeart{
+font-size:100px;
+}
+
+.envelope{
+transform:scale(.8);
+}
+
+.storyCard{
+padding:30px;
+}
+
+.storyText{
+font-size:22px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PRELOADER -->
+
+<div id="preloader">
+
+<div class="loaderHeart">❤️</div>
+
+<div class="loadingText">
+در حال آماده کردن یک سورپرایز برای خاص‌ترین دختر دنیا...
+</div>
+
+</div>
+
+<!-- BACKGROUND -->
+
+<div class="background" id="background"></div>
+
+<div class="storyBackground" id="storyBg"></div>
+
+<div class="storyOverlay" id="storyOverlay"></div>
+
+<!-- AUDIO -->
+
+<audio id="bgMusic" loop>
+<source src="Afshar - Tavalod 128.mp3" type="audio/mpeg">
+</audio>
+
+<div id="audioBtn">🎵</div>
+
+<!-- APP -->
+
+<div id="app">
+
+<!-- SCENE 1 -->
+
+<div class="scene active" id="scene1">
+
+<div class="bigText typeWriter" id="typeEnglish"></div>
+
+<div class="subText">
+click anywhere
+</div>
+
+</div>
+
+<!-- SCENE 2 -->
+
+<div class="scene" id="scene2">
+
+<div class="bigText typeWriter" id="typePersian"></div>
+
+</div>
+
+<!-- SCENE 3 -->
+
+<div class="scene" id="scene3">
+
+<div class="heroHeart">
+❤️
+</div>
+
+<div class="subText">
+قلبی که برای یک نفر خاص می‌تپه...
+</div>
+
+</div>
+
+<!-- SCENE 4 -->
+
+<div class="scene" id="scene4">
+
+<div class="envelope">
+
+<div class="envelopeSeal">
+❤️
+</div>
+
+</div>
+
+<div class="subText" style="margin-top:40px;color:#FFD700">
+برای مبینا...
+</div>
+
+</div>
+
+<!-- SCENE 5 -->
+
+<div class="scene" id="scene5">
+
+<div class="storyCard">
+
+<div class="storyText" id="storyText"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FINAL -->
+
+<div class="finalScreen" id="finalScreen">
+
+<div class="finalTitle">
+تولدت مبارک دختر دوست داشتنی من ❤️
+</div>
+
+<div class="finalSignature">
+
+با تمام عشق دلم
+<br><br>
+
+برای تو ❤️
+<br><br>
+
+یاسر نظری
+<br>
+
+1405-04-06
+
+</div>
+
+<button class="secretBtn" onclick="secretEnding(event)">
+یه حرف آخر...
+</button>
+
+</div>
+
+<script>
+
+/* ================= PRELOADER ================= */
+
+setTimeout(()=>{
+
+document.getElementById("preloader").style.opacity=0;
+
+setTimeout(()=>{
+document.getElementById("preloader").remove();
+},1500)
+
+},2500)
+
+/* ================= TYPEWRITER ================= */
+
+function typeWriter(element,text,speed=55){
+
+let i=0;
+
+element.innerHTML="";
+
+let interval=setInterval(()=>{
+
+element.innerHTML+=text.charAt(i);
+
+i++;
+
+if(i>=text.length){
+
+clearInterval(interval);
+
+}
+
+},speed)
+
+}
+
+setTimeout(()=>{
+
+typeWriter(
+document.getElementById("typeEnglish"),
+"Sometimes... someone enters your world quietly..."
+)
+
+},3000)
+
+/* ================= PARTICLES ================= */
+
+function createParticle(){
+
+let p=document.createElement("div");
+
+p.classList.add("particle");
+
+p.style.left=Math.random()*100+"vw";
+
+let size=Math.random()*4+2;
+
+p.style.width=size+"px";
+p.style.height=size+"px";
+
+let duration=Math.random()*8+6;
+
+p.style.animationDuration=duration+"s";
+
+document.getElementById("background").appendChild(p);
+
+setTimeout(()=>{
+p.remove();
+},duration*1000)
+
+}
+
+setInterval(createParticle,300)
+
+/* ================= SCENES ================= */
+
+let currentScene=1;
+const totalScenes=5;
+
+document.body.addEventListener("click",nextScene);
+
+function nextScene(){
+
+if(currentScene===1){
+
+setTimeout(()=>{
+
+typeWriter(
+document.getElementById("typePersian"),
+"بعضی آدم‌ها... بی‌صدا وارد زندگی آدم می‌شوند..."
+)
+
+},700)
+
+}
+
+if(currentScene===4){
+
+document.getElementById("scene4").classList.remove("active");
+
+startMusic();
+
+startStoryMode();
+
+currentScene=5;
+
+return;
+
+}
+
+if(currentScene>=5){
+return;
+}
+
+document.getElementById("scene"+currentScene).classList.remove("active");
+
+currentScene++;
+
+document.getElementById("scene"+currentScene).classList.add("active");
+
+}
+
+/* ================= MUSIC ================= */
+
+const music=document.getElementById("bgMusic");
+
+const btn=document.getElementById("audioBtn");
+
+function startMusic(){
+
+music.volume=0;
+
+music.play();
+
+let fade=setInterval(()=>{
+
+if(music.volume<0.95){
+
+music.volume+=0.05;
+
+}else{
+
+clearInterval(fade);
+
+}
+
+},300)
+
+btn.style.display="flex";
+
+btn.classList.add("spin");
+
+}
+
+btn.onclick=function(e){
+
+e.stopPropagation();
+
+if(music.paused){
+
+music.play();
+btn.classList.add("spin");
+
+}else{
+
+music.pause();
+btn.classList.remove("spin");
+
+}
+
+}
+
+/* ================= STORY ================= */
+
+const storyParagraphs=[
+
+`برای مبینای خودم
+
+تولدت مبارک عزیزترینم...`,
+
+`تولدت مبارک به عزیز این دل من...
+
+قشنگ‌ترین اتفاقی هستی که آروم آروم وارد دلم شدی...`,
+
+`بعضی آدما یه جوری وارد زندگی آدم می‌شن...
+
+بدون اینکه بفهمی چطور...
+
+به بودنشون عادت می‌کنی...`,
+
+`تو برای من دقیقاً همون آدمی...
+
+خیلی آروم...
+
+خیلی قشنگ...
+
+خیلی واقعی...`,
+
+`وقتی بهت فکر می‌کنم...
+
+یه لبخند میاد روی صورتم...
+
+یه حس قشنگ ته دلم می‌شینه...`,
+
+`آرزو می‌کنم...
+
+دلت همیشه آروم باشه...
+
+دنیا باهات مهربون باشه...`,
+
+`یه آرزوی کوچیک خودخواهانه هم دارم...
+
+اینکه سهمی توی لبخندت داشته باشم...`,
+
+`بودنت برای من ارزشمنده...
+
+خیلی بیشتر از یه تبریک ساده...`,
+
+`تولدت مبارک نفسم...
+
+تولدت مبارک عزیزم...
+
+تولدت مبارک دختر دوست داشتنی من...`,
+
+`با تمام عشق دلم
+
+برای تو ❤️
+
+یاسر نظری`
+
+];
+
+let storyIndex=0;
+
+function startStoryMode(){
+
+document.getElementById("storyBg").style.display="block";
+
+document.getElementById("storyOverlay").style.display="block";
+
+document.getElementById("scene5").classList.add("active");
+
+playStory();
+
+}
+
+function playStory(){
+
+if(storyIndex>=storyParagraphs.length){
+
+setTimeout(showFinalScreen,3000);
+
+return;
+
+}
+
+let box=document.getElementById("storyText");
+
+box.style.opacity=0;
+
+setTimeout(()=>{
+
+box.innerText=storyParagraphs[storyIndex];
+
+box.style.opacity=1;
+
+storyIndex++;
+
+},700)
+
+setTimeout(playStory,6500);
+
+}
+
+/* ================= FINAL ================= */
+
+function showFinalScreen(){
+
+document.getElementById("scene5").style.display="none";
+
+document.getElementById("storyBg").style.display="none";
+
+document.getElementById("storyOverlay").style.display="none";
+
+document.getElementById("finalScreen").style.display="flex";
+
+}
+
+/* ================= SECRET ================= */
+
+function secretEnding(e){
+
+e.stopPropagation();
+
+document.body.innerHTML=`
+
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:black;
+font-family:Vazir;
+text-align:center;
+">
+
+<div style="
+font-size:5rem;
+animation:heartbeat 1s infinite;
+filter:drop-shadow(0 0 20px crimson);
+">
+
+دوستت دارم مبینا ❤️
+
+</div>
+
+<div style="
+margin-top:35px;
+font-size:24px;
+color:white;
+line-height:2;
+">
+
+You are my favorite person in this universe
+
+</div>
+
+</div>
+
+`;
+
+}
+
+/* ================= ROSE RAIN ================= */
+
+function createRose(){
+
+let rose=document.createElement("div");
+
+rose.classList.add("rose");
+
+const roses=["🌹","❤️","💖","✨"];
+
+rose.innerText=roses[Math.floor(Math.random()*roses.length)];
+
+rose.style.left=Math.random()*100+"vw";
+
+let duration=Math.random()*5+6;
+
+rose.style.animationDuration=duration+"s";
+
+document.body.appendChild(rose);
+
+setTimeout(()=>{
+rose.remove();
+},duration*1000)
+
+}
+
+setInterval(createRose,700)
+
+/* ================= FLOATING HEARTS ================= */
+
+function createFloatingHeart(){
+
+let heart=document.createElement("div");
+
+heart.classList.add("floatHeart");
+
+heart.innerText="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+let duration=Math.random()*5+7;
+
+heart.style.animationDuration=duration+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},duration*1000)
+
+}
+
+setInterval(createFloatingHeart,1400)
+
+/* ================= SPARKLES ================= */
+
+document.addEventListener("mousemove",(e)=>{
+
+let spark=document.createElement("div");
+
+spark.classList.add("sparkle");
+
+spark.innerText="✨";
+
+spark.style.left=e.clientX+"px";
+spark.style.top=e.clientY+"px";
+
+document.body.appendChild(spark);
+
+setTimeout(()=>{
+spark.remove();
+},800)
+
+})
+
+</script>
+
+</body>
+</html>
